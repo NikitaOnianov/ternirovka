@@ -1,0 +1,41 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Onianov.AddTovar"
+        Title="Товар"
+        xmlns:vm="using:Onianov.Models">
+  <ScrollViewer>
+	  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+		  <TextBox Name="name" Watermark="название товара"/>
+          <TextBox Name="idname" Watermark="Артикул товара"/>
+          <NumericUpDown Name="price" Width="300" Watermark="Цена"/>
+          <ComboBox Name="ListDeliver">
+			  <ComboBox.ItemTemplate>
+				  <DataTemplate DataType="vm:Delivere">
+					  <TextBlock Text="{Binding DelivereName}"/>
+                  </DataTemplate>
+              </ComboBox.ItemTemplate>
+          </ComboBox>
+           <ComboBox Name="ListProduser">
+			  <ComboBox.ItemTemplate>
+				  <DataTemplate DataType="vm:Producer">
+					   <TextBlock Text="{Binding ProducerName}"/>
+                  </DataTemplate>
+              </ComboBox.ItemTemplate>
+          </ComboBox>
+           <ComboBox Name="ListType">
+			  <ComboBox.ItemTemplate>
+				  <DataTemplate DataType="vm:TovarType">
+					   <TextBlock Text="{Binding TovarName}"/>
+                  </DataTemplate>
+              </ComboBox.ItemTemplate>
+          </ComboBox>
+          <TextBlock Name="Mess"/>
+          <Button Content="Добавть" Click="Button_Click_Add"/>
+          <Button Content="Редактировать" Click="Button_Click_Red"/>
+          <Button Content="Назад" Click="Button_Click"/>
+      </StackPanel>
+  </ScrollViewer>
+</Window>

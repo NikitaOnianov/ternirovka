@@ -1,0 +1,1 @@
+dotnet ef dbcontext scaffold "Host=localhost;Username=userdb;Password=1234;Port=5432" Npgsql.EntityFrameworkCore.PostgreSQL -o Models --schema "trenirovca"

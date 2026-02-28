@@ -1,0 +1,15 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Onianov.MainWindow"
+        Title="Авторизация">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+		<TextBox Watermark="логин" Name="Login"/>
+        <TextBox Watermark="пароль" Name="password"/>
+        <Button Content="Войти" Click="Auth_Click"/>
+        <Button Content="Пропустить" Click="Pass_Click"/>
+        <TextBlock Name="Mess"/>
+    </StackPanel>
+</Window>

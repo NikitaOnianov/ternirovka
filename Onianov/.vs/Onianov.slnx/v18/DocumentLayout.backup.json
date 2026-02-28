@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\VivoBook 15X\\Desktop\\\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\Onianov\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E87C0BEB-00A7-C0B9-7FC5-D1884BF3C3C2}|Onianov\\Onianov.csproj|c:\\users\\vivobook 15x\\desktop\\\u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\onianov\\onianov\\addtovar.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E87C0BEB-00A7-C0B9-7FC5-D1884BF3C3C2}|Onianov\\Onianov.csproj|solutionrelative:onianov\\addtovar.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E87C0BEB-00A7-C0B9-7FC5-D1884BF3C3C2}|Onianov\\Onianov.csproj|c:\\users\\vivobook 15x\\desktop\\\u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\onianov\\onianov\\addtovar.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{E87C0BEB-00A7-C0B9-7FC5-D1884BF3C3C2}|Onianov\\Onianov.csproj|solutionrelative:onianov\\addtovar.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E87C0BEB-00A7-C0B9-7FC5-D1884BF3C3C2}|Onianov\\Onianov.csproj|c:\\users\\vivobook 15x\\desktop\\\u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\onianov\\onianov\\accounts\\admin.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E87C0BEB-00A7-C0B9-7FC5-D1884BF3C3C2}|Onianov\\Onianov.csproj|solutionrelative:onianov\\accounts\\admin.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Admin.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\VivoBook 15X\\Desktop\\\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\Onianov\\Onianov\\Accounts\\Admin.axaml.cs",
+              "RelativeDocumentMoniker": "Onianov\\Accounts\\Admin.axaml.cs",
+              "ToolTip": "C:\\Users\\VivoBook 15X\\Desktop\\\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\Onianov\\Onianov\\Accounts\\Admin.axaml.cs",
+              "RelativeToolTip": "Onianov\\Accounts\\Admin.axaml.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAuwFIAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T15:19:49.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddTovar.axaml",
+              "DocumentMoniker": "C:\\Users\\VivoBook 15X\\Desktop\\\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\Onianov\\Onianov\\AddTovar.axaml",
+              "RelativeDocumentMoniker": "Onianov\\AddTovar.axaml",
+              "ToolTip": "C:\\Users\\VivoBook 15X\\Desktop\\\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\Onianov\\Onianov\\AddTovar.axaml",
+              "RelativeToolTip": "Onianov\\AddTovar.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-28T15:18:23.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddTovar.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\VivoBook 15X\\Desktop\\\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\Onianov\\Onianov\\AddTovar.axaml.cs",
+              "RelativeDocumentMoniker": "Onianov\\AddTovar.axaml.cs",
+              "ToolTip": "C:\\Users\\VivoBook 15X\\Desktop\\\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430\\Onianov\\Onianov\\AddTovar.axaml.cs*",
+              "RelativeToolTip": "Onianov\\AddTovar.axaml.cs*",
+              "ViewState": "AgIAACgAAAAAAAAAAAAuwDgAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T14:29:06.101Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

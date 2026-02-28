@@ -1,0 +1,60 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Onianov.Client"
+        Title="Авторизованный пользователь"
+        xmlns:vm="using:Onianov.Models">
+  <ScrollViewer>
+	  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="15" Width="800">
+          <StackPanel Orientation="Horizontal" Width="800">
+              <Button Content="Выйти" Click="Button_Click"/>
+              <TextBlock Name="name" HorizontalAlignment="Right"/>
+          </StackPanel>
+		  <Border Height="400" Width="700">
+			  <ListBox Name="ListTovars">
+				  <ListBox.ItemTemplate>
+					  <DataTemplate DataType="vm:TovarDTO">
+						  <StackPanel Orientation="Horizontal">
+							  <Image Width="200" Source="{Binding TovarPhoto}"/>
+                              <StackPanel>
+								    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding TovarType}"/>
+                                        <TextBlock Text=" | "/>
+                                        <TextBlock Text="{Binding TovarName}"/>
+                                   </StackPanel>
+                                  <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Описание товара:"/>
+                                        <TextBlock Text="{Binding TovarDesription}"  Width="300"/>
+                                   </StackPanel>
+                                   <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Произволитель: "/>
+                                        <TextBlock Text="{Binding TovarProducer}"/>
+                                   </StackPanel>
+                                  <StackPanel Orientation="Horizontal">
+                                      <TextBlock Text="Поставщик:"/>
+                                      <TextBlock Text="{Binding TovarDelivary}"/>
+                                 </StackPanel>
+                                  <StackPanel Orientation="Horizontal">
+                                      <TextBlock Text="Цена:"/>
+                                      <TextBlock Text="{Binding TovarPrice}"/>
+                                 </StackPanel>
+                                  <StackPanel Orientation="Horizontal">
+                                      <TextBlock Text="Колличество на складе:"/>
+                                      <TextBlock Text="{Binding TovarCount}"/>
+                                 </StackPanel>
+                                  
+                              </StackPanel>
+                              <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                      <TextBlock Text="Скидка:"/>
+                                      <TextBlock Text="{Binding TovarSkidka}"/>
+                                 </StackPanel>
+                          </StackPanel>
+                      </DataTemplate>
+                  </ListBox.ItemTemplate>
+              </ListBox>
+          </Border>
+      </StackPanel>
+  </ScrollViewer>
+</Window>

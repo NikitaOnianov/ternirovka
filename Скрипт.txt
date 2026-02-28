@@ -1,0 +1,214 @@
+-- DROP SCHEMA trenirovca;
+
+CREATE SCHEMA trenirovca AUTHORIZATION userdb;
+-- trenirovca.deliveres определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.deliveres;
+
+CREATE TABLE trenirovca.deliveres (
+	delivere_id int4 GENERATED ALWAYS AS IDENTITY NOT NULL,
+	delivere_name varchar NULL,
+	CONSTRAINT deliveres_pk PRIMARY KEY (delivere_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.deliveres OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.deliveres TO userdb;
+
+
+-- trenirovca.producers определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.producers;
+
+CREATE TABLE trenirovca.producers (
+	producer_id int4 GENERATED ALWAYS AS IDENTITY NOT NULL,
+	producer_name varchar NULL,
+	CONSTRAINT producers_pk PRIMARY KEY (producer_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.producers OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.producers TO userdb;
+
+
+-- trenirovca.tovar_type определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.tovar_type;
+
+CREATE TABLE trenirovca.tovar_type (
+	tovar_id int4 GENERATED ALWAYS AS IDENTITY NOT NULL,
+	tovar_name varchar NULL,
+	CONSTRAINT tovar_type_pk PRIMARY KEY (tovar_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.tovar_type OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.tovar_type TO userdb;
+
+
+-- trenirovca.type_user определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.type_user;
+
+CREATE TABLE trenirovca.type_user (
+	type_user_id int4 GENERATED ALWAYS AS IDENTITY NOT NULL,
+	type_user_name varchar NULL,
+	CONSTRAINT type_user_pk PRIMARY KEY (type_user_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.type_user OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.type_user TO userdb;
+
+
+-- trenirovca.address определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.address;
+
+CREATE TABLE trenirovca.address (
+	address_id int4 GENERATED ALWAYS AS IDENTITY NOT NULL,
+	address_name varchar NOT NULL,
+	CONSTRAINT address_pk PRIMARY KEY (address_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.address OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.address TO userdb;
+
+
+-- trenirovca.order_status определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.order_status;
+
+CREATE TABLE trenirovca.order_status (
+	order_status_id int4 GENERATED ALWAYS AS IDENTITY NOT NULL,
+	order_status_name varchar NOT NULL,
+	CONSTRAINT order_status_pk PRIMARY KEY (order_status_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.order_status OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.order_status TO userdb;
+
+
+-- trenirovca.tovars определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.tovars;
+
+CREATE TABLE trenirovca.tovars (
+	tovar_id varchar NOT NULL,
+	tovar_name varchar NULL,
+	tovar_price numeric NULL,
+	tovar_delivary int4 NOT NULL,
+	tovar_producer int4 NOT NULL,
+	tovar_type int4 NOT NULL,
+	tovar_skidka int4 NULL,
+	tovar_count int4 NULL,
+	tovar_desription text NULL,
+	tovar_photo varchar NULL,
+	CONSTRAINT tovars_pk PRIMARY KEY (tovar_id),
+	CONSTRAINT tovars_deliveres_fk FOREIGN KEY (tovar_delivary) REFERENCES trenirovca.deliveres(delivere_id),
+	CONSTRAINT tovars_producers_fk FOREIGN KEY (tovar_producer) REFERENCES trenirovca.producers(producer_id),
+	CONSTRAINT tovars_tovar_type_fk FOREIGN KEY (tovar_type) REFERENCES trenirovca.tovar_type(tovar_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.tovars OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.tovars TO userdb;
+
+
+-- trenirovca.users определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.users;
+
+CREATE TABLE trenirovca.users (
+	user_id int4 GENERATED ALWAYS AS IDENTITY NOT NULL,
+	user_name varchar NOT NULL,
+	user_login varchar NOT NULL,
+	user_password varchar NOT NULL,
+	user_type int4 NOT NULL,
+	CONSTRAINT users_pk PRIMARY KEY (user_id),
+	CONSTRAINT users_type_user_fk FOREIGN KEY (user_type) REFERENCES trenirovca.type_user(type_user_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.users OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.users TO userdb;
+
+
+-- trenirovca.orders определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.orders;
+
+CREATE TABLE trenirovca.orders (
+	order_id int4 GENERATED ALWAYS AS IDENTITY NOT NULL,
+	order_date_create date NOT NULL,
+	order_date_delivery date NOT NULL,
+	order_address int4 NOT NULL,
+	order_user int4 NOT NULL,
+	order_code int4 NOT NULL,
+	order_status int4 NOT NULL,
+	CONSTRAINT orders_pk PRIMARY KEY (order_id),
+	CONSTRAINT orders_address_fk FOREIGN KEY (order_address) REFERENCES trenirovca.address(address_id),
+	CONSTRAINT orders_order_status_fk FOREIGN KEY (order_status) REFERENCES trenirovca.order_status(order_status_id),
+	CONSTRAINT orders_users_fk FOREIGN KEY (order_user) REFERENCES trenirovca.users(user_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.orders OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.orders TO userdb;
+
+
+-- trenirovca.order_tovar определение
+
+-- Drop table
+
+-- DROP TABLE trenirovca.order_tovar;
+
+CREATE TABLE trenirovca.order_tovar (
+	order_tovar_id int4 GENERATED ALWAYS AS IDENTITY NOT NULL,
+	order_tovar_tovar varchar NOT NULL,
+	order_tovar_order int4 NOT NULL,
+	CONSTRAINT order_tovar_pk PRIMARY KEY (order_tovar_id),
+	CONSTRAINT order_tovar_orders_fk FOREIGN KEY (order_tovar_order) REFERENCES trenirovca.orders(order_id),
+	CONSTRAINT order_tovar_tovars_fk FOREIGN KEY (order_tovar_tovar) REFERENCES trenirovca.tovars(tovar_id)
+);
+
+-- Permissions
+
+ALTER TABLE trenirovca.order_tovar OWNER TO userdb;
+GRANT ALL ON TABLE trenirovca.order_tovar TO userdb;
+
+
+
+
+-- Permissions
+
+GRANT ALL ON SCHEMA trenirovca TO userdb;
